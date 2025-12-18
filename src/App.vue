@@ -231,7 +231,7 @@
 import { ref, reactive, computed } from 'vue';
 
 // --- Import Asset ---
-import pinImg from '../assets/img/pin.png';
+import pinImg from '../assets/img/Pin.png';
 import wrapperImg from '../assets/img/wrapper.png';
 import imgRed from '../assets/img/image-red.png';
 import imgBlue from '../assets/img/image-blue.png';
