@@ -271,7 +271,7 @@ import itemBgImg from "../assets/img/item.png";
 const remainingSpins = ref(3);
 const spinCount = ref(1);
 
-// Reward Data: resultImage เปลี่ยนเป็น itemBgImg ตามที่รีเควส
+// Reward Data
 const rewards = ref([
   { id: 1, name: "iPhone 17", stock: 1, weight: 100, theme: "red", resultImage: itemBgImg },
   { id: 2, name: "PS5", stock: 2, weight: 2, theme: "blue", resultImage: itemBgImg },
@@ -298,7 +298,6 @@ const targetWord = reactive([
   { char: "Y", image: letterY, collected: false },
 ]);
 
-// --- Helper: Segment Styles (Background & Border Gradient) ---
 const getSegmentStyle = (theme) => {
   let color = '156, 163, 175'; // Default Gray
 
@@ -307,13 +306,10 @@ const getSegmentStyle = (theme) => {
   else if (theme === 'green') color = '34, 197, 94';
 
   return {
-    // 1. Layer บน: สี Theme โปร่งแสง (0.2)
-    // 2. Layer ล่าง: สีเทาเข้มไล่ระดับตามดีไซน์
     background: `
       linear-gradient(0deg, rgba(${color}, 0.2), rgba(${color}, 0.2)),
       linear-gradient(186.63deg, #2D2D2D 6.53%, #2C2C2C 96.3%)
     `,
-    // Gradient Border
     border: '2px solid transparent',
     borderImageSource: 'linear-gradient(186.7deg, rgba(255, 255, 255, 0.5) 5.26%, rgba(255, 255, 255, 0) 63.54%)',
     borderImageSlice: '1'
@@ -499,9 +495,6 @@ const resetGameRound = () => {
   }
 }
 
-/* .animate-spin-slow {
-  animation: spin-slow 60s linear infinite;
-} */
 
 @keyframes pulse-slow {
 
@@ -521,7 +514,6 @@ const resetGameRound = () => {
   animation: pulse-slow 3s infinite;
 }
 
-/* FIX: Custom Easing for Fast Spin Effect */
 
 .ease-spin-fast {
   transition-timing-function: cubic-bezier(0.2, 0.8, 0.3, 1);
