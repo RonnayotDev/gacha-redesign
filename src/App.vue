@@ -55,6 +55,7 @@ function handleCardClick(index) {
   background-image: url('./assets/image/bg.png');
   background-size: cover;
   background-position: center;
+  overflow: hidden;
   .logo {
     position: fixed;
     top: 32px;
@@ -67,6 +68,7 @@ function handleCardClick(index) {
     display: flex;
     gap: 32px;
     align-items: center;
+    overflow: visible;
   }
 }
 </style>
