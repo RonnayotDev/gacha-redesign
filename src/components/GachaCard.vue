@@ -8,7 +8,7 @@ import congratRareImg from '../assets/image/congrat-rare.png'
 import congratLegendaryImg from '../assets/image/congrate-legendary.png'
 import specialNewImg from '../assets/image/special-new.png'
 import lightImg from '../assets/image/light.png'
-import ItemGrid from './itemGrid.vue'
+import ItemGrid from './ItemGrid.vue'
 
 const props = defineProps({
   isOpened: Boolean,
