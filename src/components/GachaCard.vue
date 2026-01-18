@@ -7,6 +7,7 @@ import congratCommonImg from '../assets/image/congrat-common.png'
 import congratRareImg from '../assets/image/congrat-rare.png'
 import congratLegendaryImg from '../assets/image/congrate-legendary.png'
 import specialNewImg from '../assets/image/special-new.png'
+import lightImg from '../assets/image/light.png'
 import ItemGrid from './itemGrid.vue'
 
 const props = defineProps({
@@ -38,6 +39,7 @@ const headerImg = computed(() => {
     <div v-if="isOpened" class="card-content">
       <img class="card-title-img" :src="titleImg" />
       <img class="card-header-img" :src="headerImg" />
+        <img v-if="rarity === 'legendary'" class="light-effect" :src="lightImg" alt="Light Effect" />
 
       <ItemGrid />
 
@@ -81,10 +83,9 @@ const headerImg = computed(() => {
     }
 
     &.legendary {
-      background:
-        radial-gradient(47.82% 47.82% at 50% 50%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%),
-        radial-gradient(50% 50% at 50% 50%, rgba(255, 192, 23, 0.2) 0%, rgba(255, 192, 23, 0) 100%),
-        linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(37, 27, 0, 0.8) 100%);
+      background-image: url('../assets/image/light.png');
+     background: linear-gradient(0deg, rgba(37, 27, 0, 0.5), rgba(37, 27, 0, 0.5)),
+     linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
       background-size: 653px 924px, 653px 924px, cover;
       background-position: center, center, center;
       background-repeat: no-repeat;
@@ -98,10 +99,23 @@ const headerImg = computed(() => {
     top: -12px;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 220px;
+    width: 240px;
     z-index: 20;
     pointer-events: none;
   }
+        .light-effect {
+      width: 653px;
+      height: 924px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      object-fit: contain;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.1;
+    }
+
 
   .card-content {
     width: 100%;
@@ -119,7 +133,6 @@ const headerImg = computed(() => {
       height: 70px;
       object-fit: contain;
     }
-
     .collect-label {
       margin-top: auto;
       color: rgba(255, 255, 255, 0.3);
