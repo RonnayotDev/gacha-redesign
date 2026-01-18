@@ -7,7 +7,7 @@ const cardRarity = ref([null, null, null])
 
 function getRandomRarity() {
   const rarities = ['common', 'rare', 'legendary']
-  const weights = [35, 35, 35]
+  const weights = [30, 30, 40]
   const random = Math.random() * 100
 
   if (random < weights[0]) return rarities[0]
